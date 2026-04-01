@@ -1,0 +1,86 @@
+{
+  // Heredamos la configuración estándar recomendada para SCSS.
+  // Esto nos proporciona una base sólida de reglas de formato y buenas prácticas
+  // para escribir código Sass limpio y consistente.
+  "extends": "stylelint-config-standard-scss",
+  // Añadimos plugins para extender la funcionalidad de Stylelint.
+  "plugins": [
+    // Este plugin nos permite validar que nuestras clases CSS sigan la sintaxis BEM.
+    "stylelint-selector-bem-pattern"
+  ],
+  // Aquí personalizamos o añadimos reglas específicas para nuestro proyecto.
+  "rules": {
+    // Desactivamos la regla genérica de patrones de clase ('selector-class-pattern').
+    // Hacemos esto porque vamos a usar la regla mucho más específica y potente
+    // que nos proporciona el plugin 'stylelint-selector-bem-pattern'.
+    "selector-class-pattern": null,
+
+    // Configuración del plugin para validar la metodología BEM.
+    "plugin/selector-bem-pattern": {
+      // Define el patrón para el nombre del "Bloque" (Block).
+      // Acepta nombres en minúsculas, permitiendo kebab-case para nombres compuestos.
+      // Ejemplos válidos: 'card', 'main-header', 'contact-form'.
+      "componentName": "[a-z]+(?:-[a-z]+)*",
+
+      // Define los patrones de nomenclatura para las clases de nuestros componentes.
+      "componentSelectors": {
+        // Patrón para el selector inicial: el Bloque, con o sin Modificador.
+        // Ejemplos válidos: .card, .card--featured
+        "initial": "^\\.{componentName}(?:--[a-z]+(?:-[a-z]+)*)?$",
+        // Patrón para selectores combinados: el Elemento dentro de un Bloque, con o sin Modificador.
+        // Ejemplos válidos: .card__image, .card__title--small
+        "combined": "^\\.{componentName}__[a-z]+(?:-[a-z]+)*(?:--[a-z]+(?:-[a-z]+)*)?$"
+      },
+
+      // Define un patrón para clases de utilidad (utility classes).
+      // Estas son clases que realizan una única función y son reutilizables.
+      // Por convención, las prefijamos con 'u-'.
+      // Ejemplo válido: .u-text-center
+      "utilitySelectors": "^\\.u-[a-z-]+$",
+
+      // Lista de selectores que el linter debe ignorar.
+      // Esta sección es CRUCIAL para poder trabajar con frameworks como Bootstrap,
+      // ya que sus clases no siguen nuestra convención BEM y, de lo contrario,
+      // generarían errores de validación constantemente.
+      "ignoreSelectors": [
+        "html",
+        "body",
+        // Ignoramos las clases de componentes de Bootstrap usando expresiones regulares
+        // que coinciden con sus prefijos comunes.
+        "^\\.container",
+        "^\\.row",
+        "^\\.col",
+        "^\\.btn",
+        "^\\.card",
+        "^\\.nav",
+        "^\\.navbar",
+        "^\\.form-",
+        "^\\.modal",
+        "^\\.alert",
+        "^\\.badge",
+        "^\\.dropdown",
+        "^\\.offcanvas",
+        "^\\.accordion",
+        "^\\.carousel",
+        // Ignoramos también las clases de utilidad de Bootstrap, que son muy numerosas
+        // y se identifican por prefijos como 'd-', 'p-', 'm-', 'g-', etc.
+        "^\\.d-",
+        "^\\.p-",
+        "^\\.px-",
+        "^\\.py-",
+        "^\\.pt-",
+        "^\\.pb-",
+        "^\\.ps-",
+        "^\\.pe-",
+        "^\\.m-",
+        "^\\.mx-",
+        "^\\.my-",
+        "^\\.mt-",
+        "^\\.mb-",
+        "^\\.ms-",
+        "^\\.me-",
+        "^\\.g-"
+      ]
+    }
+  }
+}
