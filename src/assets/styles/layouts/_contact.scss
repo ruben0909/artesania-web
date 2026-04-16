@@ -1,0 +1,62 @@
+@use "../variables";
+
+@layer contact-base, contact-layout, contact-components;
+
+@layer contact-base {
+  .page--contact {
+    .contact-form {
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(247, 240, 226, 0.98));
+    }
+  }
+}
+
+@layer contact-layout {
+  .page--contact {
+    .contact-panel {
+      container-type: inline-size;
+    }
+
+    .contact-panel__header {
+      max-width: 58rem;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .contact-panel__layout {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+  }
+}
+
+@layer contact-components {
+  .page--contact {
+    .contact-form {
+      animation-delay: 0.15s;
+    }
+
+    .contact-panel__details,
+    .contact-form {
+      border-radius: 1.5rem;
+    }
+
+    .form-control,
+    .form-select {
+      border-color: color-mix(in srgb, variables.$color-primary 35%, white);
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: variables.$color-primary;
+      box-shadow: 0 0 0 0.2rem rgba(42, 77, 77, 0.15);
+    }
+
+    @container (min-width: 50rem) {
+      .contact-panel__layout {
+        grid-template-columns: 1fr 1.2fr;
+        align-items: start;
+      }
+    }
+  }
+}
