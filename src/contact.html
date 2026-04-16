@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <!-- do not remove this line! -->
+    <title>Jornadas sobre artesanía | Contacto</title>
+  </head>
+  <body class="page page--contact">
+    <include src="./views/header.html"></include>
+    <main class="page-shell page-shell--contact">
+      <section class="contact-panel container py-5">
+        <header class="contact-panel__header">
+          <p class="section-kicker">Participa</p>
+          <h1 class="section-title">Contacta con la organización</h1>
+          <p class="section-lead">Si eres artesana, comercio local, centro educativo o persona interesada, escríbenos y te responderemos con horarios, necesidades técnicas y opciones de colaboración.</p>
+        </header>
+
+        <div class="contact-panel__layout">
+          <div class="contact-panel__details card border-0 shadow-sm">
+            <div class="card-body">
+              <h2 class="card-title h4">Datos útiles</h2>
+              <p class="card-text">Ayuntamiento de Buenavista de Valdavia, Plaza Mayor 12, atención de lunes a viernes de 9:00 a 14:00.</p>
+              <p class="card-text">Correo: jornadas@santroc.example · Teléfono: 972 555 812</p>
+              <p class="card-text">Habrá servicio de traducción a lengua de signos previa petición.</p>
+            </div>
+          </div>
+
+          <form class="contact-form card border-0 shadow-lg animate__animated animate__fadeInUp" name="contacto-artesania" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contacto-artesania" />
+            <div class="card-body">
+              <h2 class="card-title h4">Formulario</h2>
+              <div class="mb-3">
+                <label for="name" class="form-label">Nombre y apellidos</label>
+                <input type="text" class="form-control" id="name" name="nombre" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" name="correo" required />
+              </div>
+              <div class="mb-3">
+                <label for="topic" class="form-label">¿En qué podemos ayudarte?</label>
+                <select class="form-select" id="topic" name="motivo" required>
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option>Quiero participar como artesana/o</option>
+                  <option>Represento a un centro educativo</option>
+                  <option>Necesito más información para visitar las jornadas</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="message" name="mensaje" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg w-100">Enviar consulta</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
+</html>
