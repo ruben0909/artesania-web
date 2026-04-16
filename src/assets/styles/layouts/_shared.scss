@@ -1,0 +1,165 @@
+@use "../variables";
+
+body {
+  margin: 0;
+  font-family: variables.$font-family-sans-serif;
+  color: variables.$color-primary;
+  background:
+    radial-gradient(circle at top left, rgba(231, 181, 106, 0.3), transparent 30%),
+    linear-gradient(180deg, #fcfaf6 0%, #f4efe4 100%);
+}
+
+/* Make the document a column flex so footer can sit at the bottom on short pages */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.page-shell {
+  overflow-x: clip;
+  flex: 1 0 auto;
+}
+
+.page-shell--home,
+.page-shell--speakers,
+.page-shell--press,
+.page-shell--contact {
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+}
+
+.site-header,
+.site-footer {
+  backdrop-filter: blur(10px);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.site-footer {
+  border-color: rgba(42, 77, 77, 0.12);
+}
+
+.site-footer__socials {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.site-footer__social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  color: variables.$color-primary;
+  background: transparent;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.site-footer__social:hover,
+.site-footer__social:focus-visible {
+  background-color: variables.$color-primary;
+  color: #fff;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.site-brand__logo {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+.site-brand__text {
+  font-family: variables.$font-family-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: variables.$color-primary;
+}
+
+.site-nav__link,
+.site-footer__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  color: variables.$color-primary;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.site-nav__link:hover,
+.site-footer__link:hover,
+.site-nav__link:focus-visible,
+.site-footer__link:focus-visible {
+  background-color: rgba(231, 181, 106, 0.22);
+  color: variables.$color-secondary;
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.page--home .site-nav__link[href="./index.html"],
+.page--speakers .site-nav__link[href="./speakers.html"],
+.page--press .site-nav__link[href="./press.html"],
+.page--contact .site-nav__link[href="./contact.html"],
+.page--home .site-footer__link[href="./index.html"],
+.page--speakers .site-footer__link[href="./speakers.html"],
+.page--press .site-footer__link[href="./press.html"],
+.page--contact .site-footer__link[href="./contact.html"] {
+  background-color: rgba(42, 77, 77, 0.12);
+  color: variables.$color-primary;
+  font-weight: 700;
+}
+
+.section-kicker {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: variables.$color-secondary;
+}
+
+.section-title {
+  margin: 0;
+  font-family: variables.$font-family-serif;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 0.95;
+}
+
+.section-lead {
+  max-width: 65ch;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.navbar-toggler {
+  border-color: rgba(42, 77, 77, 0.25);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(42, 77, 77, 0.15);
+}
