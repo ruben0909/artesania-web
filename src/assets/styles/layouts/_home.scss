@@ -1,60 +1,132 @@
 @use "../variables";
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  margin: 0;
-  padding: 2rem;
-  font-family: variables.$font-family-sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: variables.$uoc-bg;
-  color: variables.$uoc-corporate;
-}
-
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
-
-  @media (min-width: variables.$mqMinWidth) {
-    max-width: none;
+.page--home {
+  .poster {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 0 3rem;
+    container-type: inline-size;
   }
-}
 
-.uoc-title {
-  font-family: variables.$font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: variables.$uoc-corporate;
-
-  @media (min-width: variables.$mqMinWidth) {
-    font-size: 36px;
+  .poster__hero {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    min-height: clamp(28rem, 55vw, 42rem);
   }
-}
 
-.uoc-footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
+  .poster__eyebrow {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: variables.$color-secondary;
+  }
+
+  .poster__title {
+    margin: 0;
+    font-family: variables.$font-family-serif;
+    font-size: clamp(2.8rem, 7vw, 5.8rem);
+    line-height: 0.9;
+  }
+
+  .poster__lead {
+    max-width: 38rem;
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .poster__illustration {
+    width: min(42rem, 100%);
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    box-shadow: 0 18px 46px rgba(31, 31, 26, 0.12);
+  }
+
+  .poster__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 72rem;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .poster__panel {
+    padding: 1.25rem;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 16px 40px rgba(31, 31, 26, 0.08);
+  }
+
+  .poster__panel--feature {
+    overflow: hidden;
+  }
+
+  .poster__panel--features {
+    text-align: left;
+  }
+
+  .poster__heading {
+    margin-bottom: 1rem;
+    font-family: variables.$font-family-serif;
+    font-size: 1.65rem;
+  }
+
+  .poster__image {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .poster__table {
+    margin-bottom: 0;
+  }
+
+  .poster__panel--courses .accordion-button {
+    font-weight: 700;
+  }
+
+  .poster__panel--courses .accordion-button:not(.collapsed) {
+    color: variables.$color-primary;
+    background-color: rgba(231, 181, 106, 0.22);
+  }
+
+  .poster__panel--courses .accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(42, 77, 77, 0.12);
+  }
+
+  .accordion-item {
+    border-color: rgba(42, 77, 77, 0.15);
+  }
+
+  @supports (display: grid) {
+    .poster {
+      display: grid;
+    }
+
+    .poster__hero,
+    .poster__info {
+      display: grid;
+    }
+
+    @container (min-width: 50rem) {
+      .poster__info {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        align-items: start;
+      }
+
+      .poster__panel--schedule {
+        grid-column: span 7;
+      }
+
+      .poster__panel--features {
+        grid-column: span 5;
+      }
+    }
+  }
 }
