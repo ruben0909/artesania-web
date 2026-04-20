@@ -45,7 +45,7 @@
     aspect-ratio: 16 / 10;
     object-fit: cover;
     border-radius: 1.5rem;
-    box-shadow: 0 18px 46px rgba(31, 31, 26, 0.12);
+    box-shadow: 0 18px 46px variables.$shadow-primary;
   }
 
   .poster__info {
@@ -60,8 +60,8 @@
   .poster__panel {
     padding: 1.25rem;
     border-radius: 1.5rem;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 16px 40px rgba(31, 31, 26, 0.08);
+    background: variables.$surface-card;
+    box-shadow: 0 16px 40px variables.$shadow-primary;
   }
 
   .poster__panel--feature {
@@ -93,15 +93,15 @@
 
   .poster__panel--courses .accordion-button:not(.collapsed) {
     color: variables.$color-primary;
-    background-color: rgba(231, 181, 106, 0.22);
+    background-color: variables.$overlay-accent;
   }
 
   .poster__panel--courses .accordion-button:focus {
-    box-shadow: 0 0 0 0.2rem rgba(42, 77, 77, 0.12);
+    box-shadow: 0 0 0 0.2rem variables.$shadow-primary;
   }
 
   .accordion-item {
-    border-color: rgba(42, 77, 77, 0.15);
+    border-color: variables.$shadow-primary;
   }
 
   @supports (display: grid) {

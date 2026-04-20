@@ -11,14 +11,14 @@
     .press-article__figure:has(.figure-caption) {
       padding: 1rem;
       border-radius: 1.5rem;
-      background: rgba(255, 255, 255, 0.8);
-      box-shadow: 0 12px 30px rgba(31, 31, 26, 0.08);
+      background: variables.$surface-card;
+      box-shadow: 0 12px 30px variables.$shadow-primary;
     }
 
     .press-article__quote {
       padding: 1rem 1.25rem;
       border-left: 0.35rem solid variables.$color-secondary;
-      background: rgba(231, 181, 106, 0.2);
+      background: variables.$overlay-accent;
       font-style: italic;
     }
   }
@@ -107,7 +107,7 @@
 
   .press-article__figure--wide {
     padding: 2.5rem;
-    background: rgba(138, 183, 206, 0.08);
+    background: variables.$shadow-primary;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,7 +148,7 @@
     height: 2rem;
     border-radius: 50%;
     background: variables.$color-primary;
-    color: #fff;
+    color: variables.$color-white;
     display: inline-grid;
     place-items: center;
     font-size: 0.875rem;

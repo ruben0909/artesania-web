@@ -5,7 +5,7 @@
 @layer contact-base {
   .page--contact {
     .contact-form {
-      background: linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(247, 240, 226, 0.98));
+      background: variables.$surface-card;
     }
   }
 }
@@ -49,7 +49,7 @@
     .form-control:focus,
     .form-select:focus {
       border-color: variables.$color-primary;
-      box-shadow: 0 0 0 0.2rem rgba(42, 77, 77, 0.15);
+      box-shadow: 0 0 0 0.2rem variables.$shadow-primary;
     }
 
     @container (min-width: 50rem) {

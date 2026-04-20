@@ -5,8 +5,8 @@ body {
   font-family: variables.$font-family-sans-serif;
   color: variables.$color-primary;
   background:
-    radial-gradient(circle at top left, rgba(231, 181, 106, 0.3), transparent 30%),
-    linear-gradient(180deg, #fcfaf6 0%, #f4efe4 100%);
+    radial-gradient(circle at top left, variables.$overlay-accent, transparent 30%),
+    linear-gradient(180deg, variables.$color-bg-light 0%, variables.$color-bg-lighter 100%);
 }
 
 /* Make the document a column flex so footer can sit at the bottom on short pages */
@@ -40,7 +40,7 @@ body {
 }
 
 .site-footer {
-  border-color: rgba(42, 77, 77, 0.12);
+  border-color: variables.$shadow-primary;
 }
 
 .site-footer__socials {
@@ -65,7 +65,7 @@ body {
 .site-footer__social:hover,
 .site-footer__social:focus-visible {
   background-color: variables.$color-primary;
-  color: #fff;
+  color: variables.$color-white;
   transform: translateY(-2px);
   outline: none;
 }
@@ -109,7 +109,7 @@ body {
 .site-footer__link:hover,
 .site-nav__link:focus-visible,
 .site-footer__link:focus-visible {
-  background-color: rgba(231, 181, 106, 0.22);
+  background-color: variables.$overlay-accent;
   color: variables.$color-secondary;
   transform: translateY(-1px);
   outline: none;
@@ -123,7 +123,7 @@ body {
 .page--speakers .site-footer__link[href="./speakers.html"],
 .page--press .site-footer__link[href="./press.html"],
 .page--contact .site-footer__link[href="./contact.html"] {
-  background-color: rgba(42, 77, 77, 0.12);
+  background-color: variables.$shadow-primary;
   color: variables.$color-primary;
   font-weight: 700;
 }
@@ -157,9 +157,9 @@ body {
 }
 
 .navbar-toggler {
-  border-color: rgba(42, 77, 77, 0.25);
+  border-color: variables.$shadow-primary;
 }
 
 .navbar-toggler:focus {
-  box-shadow: 0 0 0 0.2rem rgba(42, 77, 77, 0.15);
+  box-shadow: 0 0 0 0.2rem variables.$shadow-primary;
 }
