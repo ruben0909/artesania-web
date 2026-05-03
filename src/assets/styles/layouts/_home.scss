@@ -7,6 +7,7 @@
     gap: 2rem;
     padding: 1rem 0 3rem;
     container-type: inline-size;
+    background-color: variables.$color-white;
   }
 
   .poster__hero {
@@ -114,18 +115,66 @@
       display: grid;
     }
 
-    @container (min-width: 50rem) {
-      .poster__info {
-        grid-template-columns: repeat(12, minmax(0, 1fr));
+    @media (min-width: 50rem) {
+      .poster {
+        margin: 0 auto;
+        grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr auto auto;
+        grid-template-areas:
+          ". image image title title"
+          ". image image eyebrow ."
+          ". image image schedule ."
+          ". features features lead .";
+        gap: 2rem 2.5rem;
         align-items: start;
       }
 
+      .poster__hero,
+      .poster__info {
+        display: contents;
+      }
+
+      .poster__eyebrow {
+        grid-area: eyebrow;
+        justify-self: start;
+        text-align: left;
+      }
+
+      .poster__title {
+        grid-area: title;
+        text-align: left;
+        position: relative;
+        z-index: 2;
+        margin-right: -2.5rem;
+      }
+
+      .poster__lead {
+        grid-area: lead;
+        text-align: left;
+      }
+
+      .poster__illustration {
+        grid-area: image;
+        width: 100%;
+        align-self: start;
+      }
+
       .poster__panel--schedule {
-        grid-column: span 7;
+        grid-area: schedule;
+        justify-self: end;
+        max-width: 34rem;
+        align-self: start;
       }
 
       .poster__panel--features {
-        grid-column: span 5;
+        grid-area: features;
+        justify-self: center;
+        max-width: 30rem;
+        align-self: start;
+      }
+
+      .poster__info {
+        grid-template-columns: none;
       }
     }
   }
