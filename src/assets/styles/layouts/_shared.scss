@@ -5,10 +5,6 @@ body {
   font-family: variables.$font-family-sans-serif;
   color: variables.$color-primary;
   background: variables.$color-light;
-}
-
-/* Make the document a column flex so footer can sit at the bottom on short pages */
-body {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
@@ -32,7 +28,6 @@ body {
 }
 
 .site-header {
-  
   top: 0;
   z-index: 1030;
 }

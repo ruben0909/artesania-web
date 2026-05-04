@@ -115,16 +115,15 @@
       display: grid;
     }
 
-    @media (min-width: 50rem) {
+    @media (width >= 50rem) {
       .poster {
         margin: 0 auto;
-        grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
-        grid-template-rows: 1fr 1fr auto auto;
-        grid-template-areas:
-          ". image image title title"
-          ". image image eyebrow ."
-          ". image image schedule ."
-          ". features features lead .";
+        grid-template:
+          ". image image title title" 1fr
+          ". image image eyebrow ." 1fr
+          ". image image schedule ." auto
+          ". features features lead ." auto
+          / 1fr 2fr 2fr 2fr 1fr;
         gap: 2rem 2.5rem;
         align-items: start;
       }
@@ -161,16 +160,14 @@
 
       .poster__panel--schedule {
         grid-area: schedule;
-        justify-self: end;
+        place-self: start end;
         max-width: 34rem;
-        align-self: start;
       }
 
       .poster__panel--features {
         grid-area: features;
-        justify-self: center;
+        place-self: start center;
         max-width: 30rem;
-        align-self: start;
       }
 
       .poster__info {

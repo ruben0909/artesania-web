@@ -1,5 +1,4 @@
 @use "../variables";
-
 @layer press-base, press-layout, press-components;
 
 @layer press-base {
@@ -10,6 +9,8 @@
     }
 
     .press-article__figure:has(.figure-caption) {
+      max-width: none;
+      margin-inline: auto;
       padding: 1rem;
       border-radius: 1.5rem;
       background: variables.$surface-card;
@@ -103,6 +104,7 @@
   }
 
   .press-article__figure--wide {
+    width: min(100%, 78rem);
     padding: 2.5rem;
     background: variables.$overlay-accent;
     display: grid;
@@ -123,6 +125,10 @@
     margin-top: 0.75rem;
     color: variables.$color-primary;
     opacity: 0.9;
+  }
+
+  .press-article__figure--small {
+    width: min(100%, 70rem);
   }
 
   .press-article__block--list {

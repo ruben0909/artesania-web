@@ -1,15 +1,13 @@
 @use "sass:color";
-
 @use "sass:map";
 
 $font-family-sans-serif:
-  "Atkinson Hyperlegible", "Segoe UI", Roboto, "Helvetica Neue",
-  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-family-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-
+  "Atkinson Hyperlegible", "Segoe UI", "roboto", "Helvetica Neue",
+  "arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-serif: "Cormorant Garamond", "georgia", "Times New Roman", serif;
 $color-primary: #2a4d4d;
 $color-secondary: #8c5a3c;
-$color-white: #ffffff;
+$color-white: #fff;
 
 // Accent / highlight colors
 $color-accent: #e7b56a;
@@ -21,10 +19,9 @@ $color-dark: #1f1f1a;
 $color-light: #f8f4ed;
 
 // Shadow / overlay color utilities
-$shadow-primary: rgba(42, 77, 77, 0.25);
-$overlay-accent: rgba(231, 181, 106, 0.3);
-$surface-card: rgba($color-white, 0.8);
-
+$shadow-primary: rgb(42 77 77 / 25%);
+$overlay-accent: rgb(231 181 106 / 30%);
+$surface-card: rgb(255 255 255 / 80%);
 $theme-colors: map.merge(
   (
     "primary": $color-primary,
@@ -38,5 +35,4 @@ $theme-colors: map.merge(
   ),
   ()
 );
-
-$mqMinWidth: 420px;
+$mq-min-width: 420px;
